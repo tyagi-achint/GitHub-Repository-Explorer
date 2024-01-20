@@ -76,12 +76,12 @@ background-color:transparent;
     border: 2px solid #aaa;
     border-radius: 8px;
     padding:0  10px ;
-margin-bottom: 10px;
 
-}
-.result{
     width: 80%;
     margin:0 auto 10px ;
+   
+}
+.result{
     display: flex;
 }
 .repository .githubLink,.result .githubLink{
