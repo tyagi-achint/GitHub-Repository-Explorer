@@ -18,7 +18,7 @@ GitHub Repository Explorer is a web application built using HTML, CSS, and JavaS
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/github-repo-explorer.git
+   git clone https://github.com/tyagi-achint/GitHub-Repository-Explorer.git
    ```
 
 2. Open the `index.html` file in your preferred web browser.
