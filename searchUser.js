@@ -103,7 +103,7 @@ function displayResults(results) {
         resultDiv.classList.add('result');
         var reposCount = result.public_repos !== undefined ? result.public_repos : 0;
         var followersCount = result.followers !== undefined ? result.followers : 0;
-        var resultInfo = "\n            <h3>".concat(result.login, "</h3>\n            <p>Followers: ").concat(followersCount, " | Repositories: ").concat(reposCount, "</p>\n            <a href=\"").concat(result.html_url, "\" target=\"_blank\">View on GitHub</a>\n        ");
+        var resultInfo = "\n            <img src=\"".concat(result.avatar_url, "\"/>\n            <div class=\"details\">\n            <h3>").concat(result.login, "</h3>\n            <p>Followers: ").concat(followersCount, " | Repositories: ").concat(reposCount, "</p>\n            <div class=\"githubLink\"><a href=\"").concat(result.html_url, "\" target=\"_blank\">View on GitHub</a></div></div>\n        ");
         resultDiv.innerHTML = resultInfo;
         resultsContainer.appendChild(resultDiv);
     });

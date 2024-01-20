@@ -41,9 +41,11 @@ function displayResults(results: any[]) {
         const followersCount = result.followers !== undefined ? result.followers : 0;
 
         const resultInfo = `
+            <img src="${result.avatar_url}"/>
+            <div class="details">
             <h3>${result.login}</h3>
             <p>Followers: ${followersCount} | Repositories: ${reposCount}</p>
-            <a href="${result.html_url}" target="_blank">View on GitHub</a>
+            <div class="githubLink"><a href="${result.html_url}" target="_blank">View on GitHub</a></div></div>
         `;
 
         resultDiv.innerHTML = resultInfo;

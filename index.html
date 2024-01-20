@@ -8,16 +8,16 @@
     <link rel="stylesheet" href="style.css">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
-
     <div class="container">
         <div class="navbar">
-            <button>Repository</button>
-            <button>User</button>
+            <button onclick="showRepository()" class="activeChoice">Repository</button>
+            <button onclick="showUser()">User</button>
         </div>
-        <div class="searchRepository">
+        <div class="searchRepository" id="repositorySection">
             <h1>GitHub Repository Explorer</h1>
             <div class="searchBar">
                 <input type="text" id="searchInput" placeholder="Enter repository name">
@@ -25,7 +25,7 @@
             </div>
             <div id="repositoriesList"></div>
         </div>
-        <div class="searchUser">
+        <div class="searchUser" id="userSection" style="display:none;">
             <h1>GitHub User Explorer</h1>
             <div>
                 <div class="searchBar">
@@ -36,9 +36,26 @@
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
-    <script src="user.js"></script>
+    <script src="searchRepository.js"></script>
+    <script src="searchUser.js"></script>
+    <script>
+        function showRepository() {
+            document.getElementById('repositorySection').style.display = 'block';
+            document.getElementById('userSection').style.display = 'none';
 
+            document.querySelector('.navbar button:nth-child(1)').classList.add('activeChoice');
+            document.querySelector('.navbar button:nth-child(2)').classList.remove('activeChoice');
+        }
+
+        function showUser() {
+            document.getElementById('repositorySection').style.display = 'none';
+            document.getElementById('userSection').style.display = 'block';
+
+            document.querySelector('.navbar button:nth-child(2)').classList.add('activeChoice');
+            document.querySelector('.navbar button:nth-child(1)').classList.remove('activeChoice');
+        }
+        showRepository();
+    </script>
 </body>
 
 </html>
