@@ -36,6 +36,12 @@
             </div>
         </div>
     </div>
+    <footer>
+        Copyright © <span id="currentYear"></span>. All rights reserved.
+        <p>
+            Designed & Developed by <a target="_blank" href="https://tyagi-achint.github.io/">Achint Tyagi</a>
+        </p>
+    </footer>
     <script src="searchRepository.js"></script>
     <script src="searchUser.js"></script>
     <script>
@@ -55,6 +61,8 @@
             document.querySelector('.navbar button:nth-child(1)').classList.remove('activeChoice');
         }
         showRepository();
+        document.getElementById('currentYear').innerText = new Date().getFullYear();
+
     </script>
 </body>
 

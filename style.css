@@ -1,8 +1,15 @@
+
 body {
-    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
+
+    font-family: Arial, sans-serif;
+
     background-color: #E9F6FF;
+
 }
 
 .container {
@@ -137,3 +144,22 @@ img{
     background-color: #aaa !important;
     color: white !important;
 }
+
+footer {
+    text-align: center;
+    background-color: transparent;
+    color: #aaa;
+    padding: 10px;
+    margin-top: 10px;
+    border-top: 1px solid #bbb;
+    margin-top: auto;
+  
+  }
+  
+  footer a {
+    color: rgb(156, 156, 156) !important;
+    text-decoration: underline !important;
+  }
+  footer p{
+    margin: 0;
+  }
