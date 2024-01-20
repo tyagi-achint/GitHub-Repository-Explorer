@@ -29,7 +29,8 @@ function displayRepositories(repositories: any[]) {
             <h3>${repo.full_name}</h3>
             <p>${repo.description || 'No description available.'}</p>
             <p>Stars: ${repo.stargazers_count} | Forks: ${repo.forks_count}</p>
-            <a href="${repo.html_url}" target="_blank">View on GitHub</a>
+            <div class="githubLink">
+            <a href="${repo.html_url}" target="_blank">View on GitHub</a></div>
         `;
 
         repositoryDiv.innerHTML = repositoryInfo;

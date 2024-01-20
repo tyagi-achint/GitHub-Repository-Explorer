@@ -6,18 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GitHub Repository Explorer</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap" rel="stylesheet">
 </head>
 
 <body>
+
     <div class="container">
-        <h1>GitHub Repository Explorer</h1>
-        <div class="searchBar">
-            <input type="text" id="searchInput" placeholder="Enter repository name">
-            <button onclick="searchRepositories()">Search</button>
+        <div class="navbar">
+            <button>Repository</button>
+            <button>User</button>
         </div>
-        <div id="repositoriesList"></div>
+        <div class="searchRepository">
+            <h1>GitHub Repository Explorer</h1>
+            <div class="searchBar">
+                <input type="text" id="searchInput" placeholder="Enter repository name">
+                <button class="searchButton" onclick="searchRepositories()">Search</button>
+            </div>
+            <div id="repositoriesList"></div>
+        </div>
+        <div class="searchUser">
+            <h1>GitHub User Explorer</h1>
+            <div>
+                <div class="searchBar">
+                    <input type="text" id="userInput" placeholder="Enter username">
+                    <button class="searchButton" onclick="searchUsers()">Search</button>
+                </div>
+                <div id="results"></div>
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
+    <script src="user.js"></script>
+
 </body>
 
 </html>
