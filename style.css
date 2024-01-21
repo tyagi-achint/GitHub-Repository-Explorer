@@ -48,6 +48,8 @@ input:focus{
 input::placeholder{
     font-weight: bolder;
     color: #aaa;
+ font-size: medium;
+
 }
 
 .searchButton {
@@ -127,7 +129,10 @@ img{
 .result .details{
     flex:auto;
 }
-
+.navbar {
+    width: 100%;
+    text-align: center;
+}
 .navbar button{
     width: 49%;
     padding: 10px 0;
@@ -162,4 +167,24 @@ footer {
   }
   footer p{
     margin: 0;
+  }
+
+  @media only screen and (max-width: 315px) {
+.navbar button{
+    margin-bottom: 10px;
+}
+.navbar button:last-child{
+    border-radius: 10px !important;
+}
+  }
+  @media only screen and (max-width: 430px) {
+    .searchBar input{
+        margin-bottom: 10px;
+    }
+    .repository{
+        overflow-x: auto;
+    }
+    .githubLink a{
+        font-size: small;
+    }
   }
