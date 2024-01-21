@@ -12,6 +12,11 @@ async function searchRepositories() {
         const response = await fetch(apiUrl);
         const data = await response.json();
         displayRepositories(data.items);
+        if (data.items.length === 0) {
+            const repositoriesList = <HTMLDivElement>document.getElementById('repositoriesList');
+
+            repositoriesList.innerHTML = '<p class="noResult">No repositories found</p>';
+        }
     } catch (error) {
         console.error('Error fetching data:', error);
     }
@@ -30,7 +35,7 @@ function displayRepositories(repositories: any[]) {
             <p>${repo.description || 'No description available.'}</p>
             <p>Stars: ${repo.stargazers_count} | Forks: ${repo.forks_count}</p>
             <div class="githubLink">
-            <a href="${repo.html_url}" target="_blank">View on GitHub</a></div>
+            <a href="${repo.html_url}" target="_blank">GitHub</a></div>
         `;
 
         repositoryDiv.innerHTML = repositoryInfo;

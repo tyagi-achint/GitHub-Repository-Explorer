@@ -36,7 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 function searchUsers() {
     return __awaiter(this, void 0, void 0, function () {
-        var searchInput, apiUrl, response, data, error_1;
+        var searchInput, apiUrl, response, data, resultsContainer, error_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -58,6 +58,10 @@ function searchUsers() {
                     return [4 /*yield*/, fetchUserDetails(data.items)];
                 case 4:
                     _a.sent();
+                    if (data.items.length === 0) {
+                        resultsContainer = document.getElementById('results');
+                        resultsContainer.innerHTML = '<p class="noResult">No user found</p>';
+                    }
                     return [3 /*break*/, 6];
                 case 5:
                     error_1 = _a.sent();
@@ -103,7 +107,7 @@ function displayResults(results) {
         resultDiv.classList.add('result');
         var reposCount = result.public_repos !== undefined ? result.public_repos : 0;
         var followersCount = result.followers !== undefined ? result.followers : 0;
-        var resultInfo = "\n            <img src=\"".concat(result.avatar_url, "\"/>\n            <div class=\"details\">\n            <h3>").concat(result.login, "</h3>\n            <p>Followers: ").concat(followersCount, " | Repositories: ").concat(reposCount, "</p>\n            <div class=\"githubLink\"><a href=\"").concat(result.html_url, "\" target=\"_blank\">View on GitHub</a></div></div>\n        ");
+        var resultInfo = "\n            <img src=\"".concat(result.avatar_url, "\"/>\n            <div class=\"details\">\n            <h3>").concat(result.login, "</h3>\n            <p>Followers: ").concat(followersCount, " | Repositories: ").concat(reposCount, "</p>\n            <div class=\"githubLink\"><a href=\"").concat(result.html_url, "\" target=\"_blank\">GitHub</a></div></div>\n        ");
         resultDiv.innerHTML = resultInfo;
         resultsContainer.appendChild(resultDiv);
     });

@@ -184,7 +184,21 @@ footer {
     .repository{
         overflow-x: auto;
     }
+    .result{
+        overflow-x: auto;
+
+    }
     .githubLink a{
         font-size: small;
     }
+  }
+
+  .noResult{
+    border: 1px solid;
+    padding: 7px 0;
+    font-weight: bolder;
+    border-radius: 10px;
+    width: 90%;
+    margin: auto;
+    text-align: center;
   }

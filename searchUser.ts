@@ -12,6 +12,11 @@ async function searchUsers() {
         const response = await fetch(apiUrl);
         const data = await response.json();
         await fetchUserDetails(data.items);
+        if (data.items.length === 0) {
+            const resultsContainer = <HTMLDivElement>document.getElementById('results');
+
+            resultsContainer.innerHTML = '<p class="noResult">No user found</p>';
+        }
     } catch (error) {
         console.error('Error fetching data:', error);
     }
@@ -45,7 +50,7 @@ function displayResults(results: any[]) {
             <div class="details">
             <h3>${result.login}</h3>
             <p>Followers: ${followersCount} | Repositories: ${reposCount}</p>
-            <div class="githubLink"><a href="${result.html_url}" target="_blank">View on GitHub</a></div></div>
+            <div class="githubLink"><a href="${result.html_url}" target="_blank">GitHub</a></div></div>
         `;
 
         resultDiv.innerHTML = resultInfo;
