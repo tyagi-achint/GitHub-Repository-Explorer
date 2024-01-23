@@ -36,6 +36,7 @@ async function fetchUserDetails(users: any[]) {
 
 function displayResults(results: any[]) {
     const resultsContainer = <HTMLDivElement>document.getElementById('results');
+    resultsContainer.innerHTML = '';
 
 
     results.forEach(result => {
